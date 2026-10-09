@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basmala Hamza // AI Engineer & Data Science Specialist</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #120F18;
+            --bg-card: #1A1524;
+            --bg-card-hover: #221C2F;
+            --accent-lavender: #9D7CC5;
+            --accent-glow: rgba(157, 124, 197, 0.25);
+            --text-main: #F4F1F8;
+            --text-muted: #A8A1B4;
+            --border-color: #312744;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding-bottom: 70px;
+            overflow-x: hidden;
+        }
+
+        /* Moving Matrix / Data Science Marquee */
+        .cyber-marquee {
+            background: linear-gradient(90deg, #2A2135, var(--accent-lavender), #2A2135);
+            color: #120F18;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 9px 0;
+            border-bottom: 2px solid var(--border-color);
+            white-space: nowrap;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .cyber-marquee span {
+            display: inline-block;
+            animation: marquee 22s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .glass-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .glass-card:hover {
+            border-color: var(--accent-lavender);
+        }
+
+        /* Hero / Header Section */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .avatar-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-lavender);
+            overflow: hidden;
+            box-shadow: 0 0 25px var(--accent-glow);
+            margin: 0 auto;
+        }
+
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(157, 124, 197, 0.15);
+            color: var(--accent-lavender);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(157, 124, 197, 0.3);
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .usp-box {
+            font-family: 'Share Tech Mono', monospace;
+            background: rgba(0,0,0,0.3);
+            border-left: 3px solid var(--accent-lavender);
+            padding: 12px 16px;
+            font-size: 14px;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: var(--accent-lavender);
+            color: var(--bg-primary);
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.2s, transform 0.1s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn:hover { opacity: 0.9; transform: translateY(-1px); }
+        .btn.outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+        .btn.outline:hover { border-color: var(--accent-lavender); }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        /* Analytics Dashboards & Data Science Widgets */
+        .dashboard-container {
+            background: #15111D;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .metric-card {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-lavender);
+            font-family: 'Share Tech Mono', monospace;
+        }
+        .metric-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Live Loss Curve */
+        .graph-box {
+            background: #0D0A12;
+            border: 1px dashed var(--accent-lavender);
+            padding: 15px;
+            margin-top: 12px;
+            border-radius: 8px;
+        }
+        .line-chart-svg { width: 100%; height: 80px; overflow: visible; }
+        .chart-polyline {
+            fill: none; stroke: var(--accent-lavender); stroke-width: 2.5;
+            stroke-dasharray: 300; stroke-dashoffset: 300;
+            animation: drawLine 3s ease forwards infinite alternate;
+        }
+        @keyframes drawLine { to { stroke-dashoffset: 0; } }
+
+        /* Confusion Matrix Style */
+        .confusion-matrix {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 12px; text-align: center;
+        }
+        .matrix-cell {
+            background: #1E172B; border: 1px solid var(--border-color); padding: 12px; font-size: 12px; border-radius: 8px;
+        }
+        .matrix-cell.high { background: rgba(157, 124, 197, 0.2); color: var(--accent-lavender); font-weight: bold; }
+        .matrix-cell.low { background: rgba(0,0,0,0.3); color: var(--text-muted); }
+
+        /* Interactive Simulator Slider */
+        .interactive-slider-box {
+            background: #1E172B; border: 1px solid var(--border-color); padding: 15px; margin-top: 12px; border-radius: 8px;
+        }
+        .slider-control { width: 100%; accent-color: var(--accent-lavender); cursor: pointer; margin-top: 8px; }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .project-card {
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            transition: 0.2s;
+        }
+        .project-card:hover {
+            border-color: var(--accent-lavender);
+            transform: translateY(-2px);
+        }
+
+        /* Form Layout */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px 14px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: #FFF;
+            font-size: 14px;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-lavender);
+        }
+
+        /* Fixed Taskbar */
+        .taskbar {
+            position: fixed; bottom: 0; left: 0; width: 100%; height: 45px;
+            background: #1A1524; border-top: 1px solid var(--border-color);
+            display: flex; align-items: center; justify-content: space-between; padding: 0 20px; z-index: 9999;
+        }
+        .start-btn {
+            background: var(--accent-lavender); color: var(--bg-primary); border: none;
+            padding: 5px 14px; font-size: 12px; font-weight: bold; border-radius: 4px; cursor: pointer;
+        }
+        .clock { font-size: 13px; font-weight: bold; color: var(--text-main); font-family: 'Share Tech Mono', monospace; }
+
+        @media(max-width: 850px) {
+            .hero-grid, .grid-2, .dashboard-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cyber-marquee">
+        <span>⚡ [RECRUITER_PORTFOLIO_FEED] // BASMALA_HAMZA: PREDICTIVE MODELING, STATISTICAL ANALYSIS, DEEP LEARNING PIPELINES, & BUSINESS INTELLIGENCE SOLUTIONS ⚡</span>
+    </div>
+
+    <div class="container">
+
+        <!-- 1. HERO SECTION -->
+        <div class="glass-card">
+            <div class="hero-grid">
+                <div>
+                    <div class="avatar-container">
+                        <img src="basmala.jpeg" alt="Basmala Ahmed Soliman">
+                    </div>
+                </div>
+                <div>
+                    <span class="badge">📊 AI ENGINEER & DATA SCIENCE SPECIALIST</span>
+                    <h1>Basmala Ahmed Soliman</h1>
+                    <p class="subtitle">Computer Science Student @ Kafrelsheikh University (Class of 2028)</p>
+                    
+                    <div class="usp-box">
+                        > "Engineering high-precision predictive models, automated data workflows, and scalable intelligence systems that drive measurable impact." 🚀
+                    </div>
+
+                    <div class="btn-group">
+                        <a href="#contact" class="btn">Hire Me / Contact ✉️</a>
+                        <a href="https://www.linkedin.com/in/basmala-hamza-b6485b357" target="_blank" class="btn outline">LinkedIn Profile 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. PERFORMANCE & METRICS -->
+        <div class="glass-card">
+            <h2 class="section-title">🎯 Model Validation & Performance Benchmarks</h2>
+            <div class="dashboard-container">
+                <div class="dashboard-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">96.5%</div>
+                        <div class="metric-label">Precision Rate</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">94.1%</div>
+                        <div class="metric-label">Recall Score</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">99.0%</div>
+                        <div class="metric-label">Data Integrity</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. SKILLS & LIVE LOSS CURVE -->
+        <div class="glass-card">
+            <h2 class="section-title">📉 Training Loss Curve & Core Competencies</h2>
+            <div class="dashboard-container" style="margin-bottom: 15px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-family: 'Share Tech Mono'; font-size: 13px; color: var(--accent-lavender);">LIVE EPOCH LOSS & CONVERGENCE TREND</span>
+                    <span style="font-size: 11px; color: var(--text-muted);">[Epochs: 100/100]</span>
+                </div>
+                <div class="graph-box">
+                    <svg class="line-chart-svg" viewBox="0 0 500 100">
+                        <line x1="0" y1="25" x2="500" y2="25" stroke="#261E36" stroke-dasharray="4" />
+                        <line x1="0" y1="50" x2="500" y2="50" stroke="#261E36" stroke-dasharray="4" />
+                        <line x1="0" y1="75" x2="500" y2="75" stroke="#261E36" stroke-dasharray="4" />
+                        <polyline class="chart-polyline" points="0,90 80,60 160,70 240,30 320,40 400,15 500,10" />
+                    </svg>
+                </div>
+            </div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; color: var(--text-muted); font-size: 15px;">
+                <li><strong>Languages:</strong> Python, C#, C++, SQL, SQL BI</li>
+                <li><strong>Machine Learning & Data Science:</strong> Predictive Modeling, Scikit-Learn, Statistical Analysis</li>
+                <li><strong>Business Intelligence:</strong> Power BI, Tableau, Advanced Analytics Dashboards</li>
+            </ul>
+        </div>
+
+        <!-- 4. EXPERIENCE & CONFUSION MATRIX -->
+        <div class="glass-card">
+            <h2 class="section-title">💼 Professional Experience & Model Evaluation Matrix</h2>
+            <div class="dashboard-container" style="margin-bottom: 20px;">
+                <p style="font-family: 'Share Tech Mono'; font-size: 12px; color: var(--accent-lavender); margin-bottom: 6px;">CLASSIFICATION EVALUATION MATRIX (CAMPAIGN PREDICTION)</p>
+                <div class="confusion-matrix">
+                    <div class="matrix-cell high">True Positive (TP): 94%<br><span style="font-size:10px; color:#A8A1B4;">Correct High-ROI Targets</span></div>
+                    <div class="matrix-cell low">False Positive (FP): 3%<br><span style="font-size:10px; color:#A8A1B4;">Minor Variance</span></div>
+                    <div class="matrix-cell low">False Negative (FN): 2%<br><span style="font-size:10px; color:#A8A1B4;">Missed Signals</span></div>
+                    <div class="matrix-cell high">True Negative (TN): 97%<br><span style="font-size:10px; color:#A8A1B4;">Correct Filtered Spam</span></div>
+                </div>
+            </div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; color: var(--text-muted);">
+                <li><strong>Digital Marketing Specialist</strong> @ Beauty Brand (June 2025 - Sep 2025): Spearheaded data-driven marketing campaigns, tracked conversion funnel metrics, and optimized audience engagement analytics.</li>
+                <li><strong>Data Entry Specialist</strong> @ Freelance/Contract: Managed high-volume database operations, data ingestion workflows, and strict verification protocols.</li>
+            </ul>
+        </div>
+
+        <!-- 5. EDUCATION & TRAINING -->
+        <div class="glass-card">
+            <h2 class="section-title">🎓 Education & Professional Training</h2>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; color: var(--text-muted);">
+                <li><strong>B.Sc. in Computer Science</strong> — Kafrelsheikh University (Class of 2028)</li>
+                <li><strong>DEPI Data Science Intern</strong> — Digital Egypt Pioneers Initiative</li>
+                <li><strong>NTI Machine Learning Intern</strong> — National Telecom Institute</li>
+                <li><strong>ITI Data Analysis & BI Intern</strong> — Information Technology Institute</li>
+            </ul>
+        </div>
+
+        <!-- 6. PROJECTS & DATA SIMULATOR -->
+        <div class="glass-card">
+            <h2 class="section-title">🚀 Featured Projects & Pipeline Simulator</h2>
+            
+            <div class="dashboard-container" style="margin-bottom: 20px;">
+                <p style="font-family: 'Share Tech Mono'; font-size: 13px; color: var(--accent-lavender);">🎛️ DATASET SIMULATION SLIDER (DRAG TO TEST PIPELINE SPEED)</p>
+                <div class="interactive-slider-box">
+                    <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                        <span>Sample Size Load:</span>
+                        <span id="slider-val" style="color: var(--accent-lavender); font-weight: bold;">500,000 Rows</span>
+                    </div>
+                    <input type="range" min="10000" max="1000000" step="10000" value="500000" class="slider-control" oninput="updateSliderText(this.value)">
+                    <div style="font-size: 11px; color: var(--text-muted); margin-top: 6px;">Simulated query pipeline execution speed: <span id="speed-val" style="color: var(--accent-lavender);">12 ms</span></div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="project-card">
+                    <h3 style="color: #FFF; font-size: 15px; margin-bottom: 6px;">Community Food App</h3>
+                    <p style="font-size: 13px; color: var(--text-muted);">Engineered a scalable platform connecting home-cooked meal suppliers with university students.</p>
+                </div>
+                <div class="project-card">
+                    <h3 style="color: #FFF; font-size: 15px; margin-bottom: 6px;">SSP Skeletal Platform</h3>
+                    <p style="font-size: 13px; color: var(--text-muted);">Developed an interactive digital medical platform mapping skeletal structures alongside robust statistical data analytics.</p>
+                </div>
+                <div class="project-card">
+                    <h3 style="color: #FFF; font-size: 15px; margin-bottom: 6px;">IoT Autonomous Car</h3>
+                    <p style="font-size: 13px; color: var(--text-muted);">Built an autonomous IoT robotics system featuring real-time sensor telemetry and environmental tracking.</p>
+                </div>
+                <div class="project-card">
+                    <h3 style="color: #FFF; font-size: 15px; margin-bottom: 6px;">Stellar Atlas</h3>
+                    <p style="font-size: 13px; color: var(--text-muted);">Designed an interactive astronomical data platform mapping celestial bodies combined with historical datasets.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. CONTACT SECTION -->
+        <div class="glass-card" id="contact">
+            <h2 class="section-title">📬 Recruiter Contact & Transmission</h2>
+            <div class="grid-2">
+                <div>
+                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 15px;">Looking for a dedicated AI engineer or data scientist for your team or project? Reach out directly:</p>
+                    <p style="margin-bottom: 10px;">📧 <strong>Email:</strong> basmalahamza777@gmail.com</p>
+                    <p style="margin-bottom: 10px;">📱 <strong>Phone:</strong> 01005346577</p>
+                    <p>💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/basmala-hamza-b6485b357" target="_blank" style="color: var(--accent-lavender); text-decoration: none;">View Profile Link</a></p>
+                </div>
+                <div>
+                    <form onsubmit="alert('⚡ MESSAGE SENT SUCCESSFULLY! Basmala will review your inquiry and connect shortly.'); return false;">
+                        <div class="form-group">
+                            <label>Your Name / Company</label>
+                            <input type="text" class="form-control" required placeholder="Recruiter / Company Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" required placeholder="recruiter@domain.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Message / Opportunity Details</label>
+                            <textarea class="form-control" rows="2" required placeholder="Discussing an AI / Data Science role..."></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%; justify-content: center;">Send Message 🚀</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="taskbar">
+        <button class="start-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})">💻 START</button>
+        <div class="clock" id="live-clock">19:39:50</div>
+    </div>
+
+    <script>
+        function updateSliderText(val) {
+            document.getElementById('slider-val').innerText = Number(val).toLocaleString() + ' Rows';
+            let speed = Math.floor((val / 1000000) * 20 + 4);
+            document.getElementById('speed-val').innerText = speed + ' ms';
+        }
+        setInterval(() => {
+            const d = new Date();
+            document.getElementById('live-clock').innerText = d.toLocaleTimeString();
+        }, 1000);
+    </script>
+</body>
+</html>
